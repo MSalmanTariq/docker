@@ -1,0 +1,38 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "server1",
+    "namespace": "default",
+    "selfLink": "/api/v1/namespaces/default/services/server1",
+    "uid": "24942fbf-c032-11e8-8043-080027501d4c",
+    "resourceVersion": "51920",
+    "creationTimestamp": "2018-09-24T19:43:42Z",
+    "labels": {
+      "run": "server1"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "protocol": "TCP",
+        "port": 8080,
+        "targetPort": 8080,
+        "nodePort": 30696
+      }
+    ],
+    "selector": {
+      "run": "server1"
+    },
+    "clusterIP": "10.108.88.100",
+    "type": "LoadBalancer",
+    "externalIPs": [
+      "192.168.99.100"
+    ],
+    "sessionAffinity": "None",
+    "externalTrafficPolicy": "Cluster"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "kind": "Deployment",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "server1",
+    "namespace": "default",
+    "selfLink": "/apis/extensions/v1beta1/namespaces/default/deployments/server1",
+    "uid": "d2f4a832-c031-11e8-8043-080027501d4c",
+    "resourceVersion": "53164",
+    "generation": 2,
+    "creationTimestamp": "2018-09-24T19:41:25Z",
+    "labels": {
+      "run": "server1"
+    },
+    "annotations": {
+      "deployment.kubernetes.io/revision": "1"
+    }
+  },
+  "spec": {
+    "replicas": 3,
+    "selector": {
+      "matchLabels": {
+        "run": "server1"
+      }
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "run": "server1"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "server1",
+            "image": "web-service:v1",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "imagePullPolicy": "Never"
+          }
+        ],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "securityContext": {},
+        "schedulerName": "default-scheduler"
+      }
+    },
+    "strategy": {
+      "type": "RollingUpdate",
+      "rollingUpdate": {
+        "maxUnavailable": 1,
+        "maxSurge": 1
+      }
+    }
+  },
+  "status": {
+    "observedGeneration": 2,
+    "replicas": 3,
+    "updatedReplicas": 3,
+    "readyReplicas": 3,
+    "availableReplicas": 3,
+    "conditions": [
+      {
+        "type": "Available",
+        "status": "True",
+        "lastUpdateTime": "2018-09-24T20:04:57Z",
+        "lastTransitionTime": "2018-09-24T20:04:57Z",
+        "reason": "MinimumReplicasAvailable",
+        "message": "Deployment has minimum availability."
+      }
+    ]
+  }
+}

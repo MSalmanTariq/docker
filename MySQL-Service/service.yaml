@@ -1,0 +1,38 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "db1",
+    "namespace": "default",
+    "selfLink": "/api/v1/namespaces/default/services/db1",
+    "uid": "b69ad03b-adea-11e8-96b2-080027501d4c",
+    "resourceVersion": "39577",
+    "creationTimestamp": "2018-09-01T13:27:03Z",
+    "labels": {
+      "run": "db1"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "protocol": "TCP",
+        "port": 3306,
+        "targetPort": 3306,
+        "nodePort": 30408
+      }
+    ],
+    "selector": {
+      "run": "db1"
+    },
+    "clusterIP": "10.100.49.253",
+    "type": "LoadBalancer",
+    "externalIPs": [
+      "192.168.99.100"
+    ],
+    "sessionAffinity": "None",
+    "externalTrafficPolicy": "Cluster"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}

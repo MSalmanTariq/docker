@@ -1,0 +1,31 @@
+.w3-agile-banner {
+	background:url(../images/bg.jpg)no-repeat 0px 0px;
+	-webkit-background-size:cover; 
+	-moz-background-size:cover;  
+	background-size:cover; 
+	min-height:700px;
+}
+
+.span1{
+    padding-right: 8px;
+    color: white;
+}
+
+.head_pad{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.opc{
+   
+    opacity: 0.6;
+    color: red;
+}
+.opc2{
+    opacity: 0.9;
+}
+.li_pad{
+    margin-bottom: 5px;
+}
+.in_pad{
+    padding-bottom: 5px;
+}
